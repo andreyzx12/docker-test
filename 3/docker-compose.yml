@@ -1,0 +1,16 @@
+version: "2.4"
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    ports:
+      - "8080:8080"
+
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+    build: ./html
